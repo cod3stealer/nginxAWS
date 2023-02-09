@@ -57,9 +57,6 @@ server {
         location / {
                 try_files $uri $uri/ =404;
         }
-        if ($request_uri ~* (rss|feed|xmlrpc|faq) ){
-         return 403;
-        }
 }
 ```
 Ahora al hacer `curl -I http://example` el output será:
